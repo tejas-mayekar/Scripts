@@ -2,6 +2,13 @@
 
 git add .
 
+git diff --cached --quiet
+
+if %errorlevel%==0 (
+    echo Nothing to add.
+    exit /b 0
+)
+
 set /p comment=Commit title: 
 set /p desc=Commit description: 
 
